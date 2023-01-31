@@ -7,6 +7,8 @@
 `ListRepository`와 `MapRepository`가 `Repository` 인터페이스의 구현체가 되어,
 `Service` 코드에서 인터페이스 객체가 구현체 인스턴스를 참조하도록 변경했다.
 
+<br/>
+
 ### 다형성을 활용
 
 ```java
@@ -22,6 +24,8 @@ SRP, OCP, DIP를 준수하는 코드가 되었을까?
 아니다.
 
 만약 `ListRepository`가 아닌 `MapRepository`를 사용해야 한다면, **`Service` 코드에 아래와 같이 변경이 발생**한다.
+
+<br/>
 
 ### `ListRepository` -> `MapRepository`
 
@@ -40,6 +44,8 @@ public class Service {
 그럼 그 **수십 개가 되는 객체에 모두 코드 수정이 필요**하다.
 
 이때 **의존관계를 주입해 주는 친구**를 사용하면 그럴 필요가 없어진다.
+
+<br/>
 
 ### 의존관계 주입
 ```java
