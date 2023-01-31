@@ -21,9 +21,9 @@ SRP, OCP, DIP를 준수하는 코드가 되었을까?
 
 아니다.
 
-만약 `ListRepository`가 아닌 MapRepository를 사용해야 한다면, **Service 코드에 아래와 같이 변경이 발생**한다.
+만약 `ListRepository`가 아닌 `MapRepository`를 사용해야 한다면, **`Service` 코드에 아래와 같이 변경이 발생**한다.
 
-### ListRepository -> MapRepository
+### `ListRepository` -> `MapRepository`
 
 ```java
 public class Service {
@@ -34,10 +34,10 @@ public class Service {
 ```
 <br/>
 
-### Repository에 의존하는 모든 객체에 변경이 필요하다.
+### `Repository`에 의존하는 모든 객체에 변경이 필요하다.
 
-이렇게만 보면 원칙을 위배하지 않는 코드 같을 수 있다. 하지만 ListRepository를 사용하고 있던 Service와 같은 객체들이 수십 개가 있다고 해 보자.
-그럼 그 수십 개가 되는 객체에 모두 코드 수정이 필요하다.
+이렇게만 보면 원칙을 위배하지 않는 코드 같을 수 있다. 하지만 `ListRepository`를 사용하고 있던 `Service`와 같은 객체들이 수십 개가 있다고 해 보자.
+그럼 그 **수십 개가 되는 객체에 모두 코드 수정이 필요**하다.
 
 이때 **의존관계를 주입해 주는 친구**를 사용하면 그럴 필요가 없어진다.
 
@@ -50,7 +50,7 @@ public class AppConfig {
     }
 }
 ```
-AppConfig 친구를 사용하여 의존관계를 주입 받아 보자.
+`AppConfig` 친구를 사용하여 의존관계를 주입하자.
 ```java
 public class Service {
 
@@ -61,7 +61,7 @@ public class Service {
 }
 ```
 
-Repository를 의존하는 모든 객체가 처음부터 의존관계를 주입받는 형식이라면,
-Repository 구현체를 변경해야 하는 상황이 와도, AppConfig의 코드만 수정하면 된다.
+**`Repository`를 의존하는 모든 객체가 처음부터 의존관계를 주입받는 형식이라면,
+`Repository` 구현체를 변경해야 하는 상황이 와도, `AppConfig`의 코드만 수정하면 된다.**
 
 생성자를 통해 주입받는 방법은 코드를 참고하자.
