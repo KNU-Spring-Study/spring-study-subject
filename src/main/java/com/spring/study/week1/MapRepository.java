@@ -3,7 +3,7 @@ package com.spring.study.week1;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MapRepository {
+public class MapRepository implements RepositoryInterface {
 
     private final Map<Integer, Object> store = new HashMap<>();
     private int sequence = 0;

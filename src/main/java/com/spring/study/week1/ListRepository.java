@@ -3,7 +3,7 @@ package com.spring.study.week1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListRepository {
+public class ListRepository implements RepositoryInterface {
 
     private final List<Object> store = new ArrayList<>();
 
